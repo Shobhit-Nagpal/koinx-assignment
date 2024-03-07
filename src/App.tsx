@@ -81,11 +81,11 @@ function App() {
       },
       {
         label: "All-Time High",
-        value: "$69,044.77 -75.6%",
+        value: "$69,044.77",
       },
       {
         label: "All-Time Low",
-        value: "$67.81 24729.1%",
+        value: "$67.81",
       },
     ],
   };
