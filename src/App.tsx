@@ -98,6 +98,9 @@ const estimatesData = {
   return (
     <div className="w-full">
       <Navbar />
+      <div className="bg-gray-100 pt-8 px-10">
+      <h2 className="text-lg text-gray-600">Cryptocurrencies {" >> "} <span className="font-semibold text-black">Bitcoin</span></h2>
+      </div>
       <div className="flex flex-col items-center justify-center bg-gray-100 p-6 md:p-12 gap-8 lg:flex-row lg:items-start">
         <section className="flex flex-col justify-center gap-8 w-full lg:w-2/3">
           <TradingViewWidget />
