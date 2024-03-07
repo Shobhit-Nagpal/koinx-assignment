@@ -79,7 +79,7 @@ export default function TrendingCoinsCarousel() {
   return (
     <Carousel>
       <CarouselContent>
-        {trendingCoins.map((coin, idx) => (
+        {trendingCoins.map((coin: any, idx: number) => (
           <CarouselItem key={idx} className="sm:basis-1/2 md:basis-1/3 px-2 flex-shrink-0">
             <TrendingCoin
               thumbnail={coin.item.small}

@@ -29,7 +29,7 @@ export default function TrendingCoinsWidget() {
     <section className="bg-white p-6 w-full rounded-xl">
       <h2 className="text-3xl font-bold text-left">Trending Coins (24h)</h2>
       <div className="p-2 mt-2">
-      {trendingCoins.map((coin) => (
+      {trendingCoins.map((coin: any) => (
         <div className="flex items-center justify-between mt-8 gap-3" key={coin.item.coin_id}>
         <div className="flex items-center gap-3">
           <img src={coin.item.small} alt={"Coin icon"}/>
