@@ -68,7 +68,6 @@ export default function TrendingCoinsCarousel() {
       try {
         const resp = await fetch(`${COINGECKO_URL}/search/trending`, options);
         const result = await resp.json();
-        console.log(result.coins);
         setTrendingCoins(result.coins);
       } catch (err) {
         console.error(err);

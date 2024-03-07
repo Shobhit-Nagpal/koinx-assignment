@@ -18,7 +18,6 @@ function TradingViewWidget() {
           `${COINGECKO_URL}/coins/bitcoin?sparkline=true&developer_data=false&community_data=false&tickers=false`,
         );
         const result = await resp.json();
-        console.log(result);
         setTokenDataImg(result.image.small);
         setTokenDataUSD(result.market_data.current_price.usd);
         setTokenDataINR(result.market_data.current_price.inr);
