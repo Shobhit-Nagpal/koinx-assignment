@@ -1,4 +1,4 @@
-import { Newspaper, TrendingUp } from "lucide-react";
+import { Info, Newspaper, TrendingUp } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -54,14 +54,17 @@ export default function SentimentWidget({ buy, hold, sell }: AnalystEstimate) {
       <h2 className="text-3xl font-bold text-left mt-2">Sentiment</h2>
 
       <div>
-        <h2 className="text-2xl font-semibold text-gray-600 text-left my-4">
-          Key Events
+        <h2 className="text-2xl font-bold text-gray-600 my-8 flex items-center">
+          Key Events{" "}
+          <span className="inline-block ml-2">
+            <Info />
+          </span>
         </h2>
         <div>
           <Carousel>
             <CarouselContent>
               {eventCardsData.map((event, idx) => (
-                <CarouselItem className="basis-1/2" key={idx}>
+                <CarouselItem className="lg:basis-1/2" key={idx}>
                   <EventCard
                     icon={event.icon}
                     heading={event.heading}
@@ -77,9 +80,12 @@ export default function SentimentWidget({ buy, hold, sell }: AnalystEstimate) {
         </div>
       </div>
 
-      <h2 className="text-2xl font-semibold text-gray-600 text-left my-4">
-        Analyst Estimates
-      </h2>
+        <h2 className="text-2xl font-bold text-gray-600 my-8 flex items-center">
+          Analyst Estimates{" "}
+          <span className="inline-block ml-2">
+            <Info />
+          </span>
+        </h2>
       <div className="flex items-center mt-4">
         {/* Circular div for Buy sentiment */}
         <div className="flex justify-center items-center h-36 w-36 bg-green-100 rounded-full">

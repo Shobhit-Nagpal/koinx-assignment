@@ -30,7 +30,7 @@ export default function TokenomicsWidget() {
         <h2 className="text-2xl font-bold text-left mt-12">
           Initial Distribution
         </h2>
-        <div className="flex items-center justify-center gap-5">
+        <div className="flex flex-col items-center justify-center gap-5 md:flex-row">
           <div className="w-64 h-64">
             <Doughnut data={data} options={options} />
           </div>

@@ -68,7 +68,7 @@ export default function About() {
         <h2 className="text-3xl font-bold text-left">
           Already Holding Bitcoin?
         </h2>
-        <div className="flex items-center gap-5 justify-start overflow-auto">
+        <div className="flex flex-col items-center gap-5 justify-start overflow-auto lg:flex-row my-4">
           {cards.map((card, idx) => (
             <Card
               key={idx}

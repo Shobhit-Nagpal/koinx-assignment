@@ -9,10 +9,10 @@ type MemberProps = {
 
 function TeamMember({ name, designation, bio, imageUrl }: MemberProps) {
   return (
-    <div className="flex gap-5 items-center justify-center bg-blue-100 p-4 rounded-xl">
+    <div className="flex flex-col gap-5 items-center justify-center bg-blue-100 p-4 rounded-xl lg:flex-row">
       <div className="flex flex-col justify-center items-center">
         <img
-          className="w-96 h-auto object-contain rounded-xl"
+          className="w-40 lg:w-96 h-auto object-contain rounded-xl my-2"
           src={imageUrl}
           alt={`${name}`}
         />

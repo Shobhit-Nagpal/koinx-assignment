@@ -1,6 +1,6 @@
 import { useEffect, useRef, memo, useState } from "react";
 import { Badge } from "./ui/badge";
-import { COINGECKO_URL, cn } from "../lib/utils";
+import { COINGECKO_URL, cn, formatINR, formatUSD } from "../lib/utils";
 import { ChevronDown, ChevronUp } from "lucide-react";
 
 function TradingViewWidget() {
@@ -38,28 +38,24 @@ function TradingViewWidget() {
     const script = document.createElement("script");
     script.src =
       "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+    script.type = "text/javascript";
     script.async = true;
-
-    const scriptContent = JSON.stringify({
-      width: "1080",
-      height: "720",
-      symbol: "BITSTAMP:BTCUSD",
-      timezone: "Etc/UTC",
-      theme: "light",
-      style: "2",
-      locale: "en",
-      enable_publishing: false,
-      hide_top_toolbar: true,
-      range: "5D",
-      allow_symbol_change: true,
-      calendar: false,
-      hide_volume: true,
-      support_host: "https://www.tradingview.com",
-    });
-
-    script.innerHTML = scriptContent;
+    script.innerHTML = `
+    {
+      "autosize": true,
+        "symbol": "BITSTAMP:BTCUSD",
+        "interval": "W",
+        "timezone": "Etc/UTC",
+        "theme": "light",
+        "style": "2",
+        "locale": "en",
+        "enable_publishing": false,
+        "allow_symbol_change": true,
+        "calendar": false,
+        "hide_volume": true,
+        "support_host": "https://www.tradingview.com"
+    }`;
     containerRef.current.appendChild(script);
-
     // Cleanup
     return () => {
       if (containerRef.current) {
@@ -80,13 +76,13 @@ function TradingViewWidget() {
             {String(tokenData.symbol).toUpperCase()}
           </p>
         </div>
-        <Badge className="rounded-lg px-4 py-2 bg-gray-500 font-medium text-lg">
+        <Badge className="rounded-lg px-4 py-2 bg-gray-500 font-medium text-sm lg:text-lg">
           Rank #{tokenData.market_cap_rank || 2}
         </Badge>
       </div>
       <div className="flex flex-col items-start justify-center mt-4">
         <div className="flex items-center justify-start gap-5">
-          <h1 className="text-3xl font-bold">${tokenDataUSD}</h1>
+          <h1 className="text-3xl font-bold">{formatUSD(tokenDataUSD)}</h1>
           <Badge
             className={cn(
               1 > 0
@@ -99,7 +95,7 @@ function TradingViewWidget() {
             {parseFloat("23.455").toFixed(2) + "%"}
           </Badge>
         </div>
-          <h2 className="text-xl font-medium mt-4">Rs {tokenDataINR}</h2>
+        <h2 className="text-xl font-medium mt-4">{formatINR(tokenDataINR)}</h2>
       </div>
       <div
         className="tradingview-widget-container mt-8"

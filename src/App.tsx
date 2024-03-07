@@ -98,8 +98,8 @@ const estimatesData = {
   return (
     <div className="w-full">
       <Navbar />
-      <div className="flex flex-col items-start justify-center bg-gray-100 p-12 gap-8 md:flex-row">
-        <section className="flex flex-col justify-center gap-8 w-2/3">
+      <div className="flex flex-col items-center justify-center bg-gray-100 p-6 md:p-12 gap-8 lg:flex-row lg:items-start">
+        <section className="flex flex-col justify-center gap-8 w-full lg:w-2/3">
           <TradingViewWidget />
           <CategoryTabs
             categories={categories}
@@ -112,11 +112,13 @@ const estimatesData = {
           />
           <SentimentWidget buy={estimatesData.buy} hold={estimatesData.hold} sell={estimatesData.sell} />
           <About />
+          <div className="hidden lg:block">
           <TokenomicsWidget />
+          </div>
           <Team />
           <Recommendations />
         </section>
-        <section className="flex flex-col items-center justify-center gap-5 w-1/3">
+        <section className="flex flex-col items-center justify-center gap-5 w-full lg:w-1/3">
           <CallToActionWidget />
           <TrendingCoinsWidget />
         </section>

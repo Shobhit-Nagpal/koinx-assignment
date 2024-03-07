@@ -13,7 +13,7 @@ export default function CallToActinWidget() {
         to be more educated and aware of your tax reports
       </p>
       <img className="p-2 w-96 h-80" src={CTAIllustration} alt={"CTA illustration"} />
-        <Button className="bg-white text-black font-semibold text-xl rounded-xl mt-4 hover:bg-gray-400 px-6 py-6">Get started for FREE <span className="ml-2"><ArrowRight /></span></Button>
+        <Button className="bg-white text-black font-semibold text-xl rounded-lg mt-4 hover:bg-gray-400 px-6 py-6">Get started for FREE <span className="ml-2"><ArrowRight /></span></Button>
     </div>
   );
 }

@@ -1,3 +1,4 @@
+import { Info } from "lucide-react";
 import { Slider } from "./ui/slider";
 
 type PerformanceMetricProps = {
@@ -54,9 +55,15 @@ function FundamentalMetric({ title, data }: FundamentalMetricProps) {
   const columnTwo = data.slice(data.length / 2);
   return (
     <div className="mt-4">
-      <h3 className="text-2xl font-bold text-gray-600 mb-8">{title}</h3>
-      <div className="flex items-center justify-between gap-5">
-        <div>
+      <h3 className="text-2xl font-bold text-gray-600 mb-8 flex items-center">
+        {title}{" "}
+        <span className="inline-block ml-2">
+          <Info />
+        </span>
+      </h3>
+      {/* Change flex-row to flex-col for mobile screens */}
+      <div className="flex flex-col lg:flex-row items-center justify-between lg:gap-5">
+        <div className="w-full">
           {columnOne.map(({ label, value, change, timeFrame }, idx) => (
             <div key={idx}>
               <div className="flex justify-between items-center py-1 gap-x-40">
@@ -74,7 +81,7 @@ function FundamentalMetric({ title, data }: FundamentalMetricProps) {
           ))}
         </div>
 
-        <div>
+        <div className="w-full lg:mt-0 mt-8">
           {columnTwo.map(({ label, value, change, timeFrame }, idx) => (
             <div key={idx}>
               <div className="flex justify-between items-center py-1 gap-x-40">
