@@ -66,7 +66,7 @@ function TradingViewWidget() {
   return (
     <section className="bg-white p-6 shadow rounded-xl">
       <div className="flex items-center justify-start gap-8">
-        <div className="flex items-center justify-start gap-3">
+        <div className="flex items-center justify-start gap-1 md:gap-3">
           <img src={tokenDataImg} alt="Token image" />
           <h2 className="text-3xl font-bold text-left">
             {tokenData.name || "Ethereum"}
@@ -75,7 +75,7 @@ function TradingViewWidget() {
             {String(tokenData.symbol).toUpperCase()}
           </p>
         </div>
-        <Badge className="rounded-lg px-4 py-2 bg-gray-500 font-medium text-sm lg:text-lg">
+        <Badge className="rounded-lg  px-1 py-1 sm:px-4 sm:py-2 bg-gray-500 font-medium text-sm lg:text-lg">
           Rank #{tokenData.market_cap_rank || 2}
         </Badge>
       </div>
