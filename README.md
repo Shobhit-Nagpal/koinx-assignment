@@ -1,3 +1,8 @@
+# About
+This repository is an assignment for KoinX for the position of Frontend Intern.
+
+It involved taking a Figma file and converting it to code using Coingecko's API.
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
