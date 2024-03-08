@@ -62,11 +62,11 @@ function FundamentalMetric({ title, data }: FundamentalMetricProps) {
         </span>
       </h3>
       {/* Change flex-row to flex-col for mobile screens */}
-      <div className="flex flex-col lg:flex-row items-center justify-between lg:gap-5">
+      <div className="flex flex-col xl:flex-row items-center justify-between lg:gap-5">
         <div className="w-full">
           {columnOne.map(({ label, value, change, timeFrame }, idx) => (
             <div key={idx}>
-              <div className="flex justify-between items-center py-1 gap-x-40">
+              <div className="flex justify-between items-center py-1 gap-x-10 md:gap-x-40">
                 <p className="text-md font-semibold text-gray-600">{label}</p>
                 <div className="text-right">
                   <p className="text-sm font-semibold">{value}</p>
@@ -81,10 +81,10 @@ function FundamentalMetric({ title, data }: FundamentalMetricProps) {
           ))}
         </div>
 
-        <div className="w-full lg:mt-0 mt-8">
+        <div className="w-full">
           {columnTwo.map(({ label, value, change, timeFrame }, idx) => (
             <div key={idx}>
-              <div className="flex justify-between items-center py-1 gap-x-40">
+              <div className="flex justify-between items-center py-1 gap-x-10 md:gap-x-40">
                 <p className="text-md font-semibold text-gray-600">{label}</p>
                 <div className="text-right">
                   <p className="text-sm font-semibold">{value}</p>
@@ -98,6 +98,7 @@ function FundamentalMetric({ title, data }: FundamentalMetricProps) {
             </div>
           ))}
         </div>
+
       </div>
     </div>
   );
