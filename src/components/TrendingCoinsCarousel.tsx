@@ -28,7 +28,7 @@ function TrendingCoin({
   return (
     <div className="bg-white shadow-md p-4 rounded-lg w-full h-full">
       <div className="flex items-center justify-between">
-        <img crossOrigin="anonymous" src={thumbnail} alt={`${symbol} thumbnail`} className="w-8 h-8" />{" "}
+        <img src={thumbnail} alt={`${symbol} thumbnail`} className="w-8 h-8" />{" "}
         {/* Resize as needed */}
         <h3 className="text-lg font-semibold">{symbol.toUpperCase()}</h3>
         <Badge
