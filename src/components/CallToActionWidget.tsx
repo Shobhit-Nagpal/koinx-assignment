@@ -4,7 +4,7 @@ import { ArrowRight } from "lucide-react";
 
 export default function CallToActinWidget() {
   return (
-    <div className="w-full flex flex-col gap-3 items-center justify-center px-16 py-10 bg-[#0052FE] rounded-xl">
+    <div className="w-full flex flex-col gap-3 items-center justify-center px-8 py-6 md:px-12 md:py-8 lg:px-16 lg:py-10 bg-[#0052FE] rounded-xl">
       <h2 className="font-semibold text-3xl text-white text-center m-2">
         Get started with KoinX for FREE
       </h2>
